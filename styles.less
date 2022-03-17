@@ -94,6 +94,10 @@ body {
 }
 
 .main {
+
+  @media only screen and (max-width: 765px) {
+    padding-bottom: 5rem;
+  }
   .navigation {
     background-color: @dk_grey;
     font-family: @accent_font;
@@ -103,6 +107,25 @@ body {
     padding:10px 0;
     display: flex;
     justify-content: space-between;
+
+    @media only screen and (max-width: 765px) {
+      // flex-direction: column;
+      justify-content: center;
+      height: 80px;
+      padding: 0;
+    }
+
+    &__button {
+      color: @red;
+      font-size: 24px;
+      background: none;
+      border: none;
+      display: none;
+
+      @media only screen and (max-width: 765px) {
+        display: block;
+      }
+    }
 
     &__logo-link {
       display: flex;
@@ -123,6 +146,11 @@ body {
       span {
         text-decoration: underline;
         text-decoration-color: @red;
+      }
+
+      @media only screen and (max-width: 765px) {
+        font-size: 22px;
+        max-width: 50%;
       }
     }
 
@@ -145,6 +173,32 @@ body {
       span {
         color: @red;
       }
+
+      @media only screen and (max-width: 765px) {
+        right: -500px;
+        &.active {
+          display: flex;
+          position: fixed;
+          flex-direction: column;
+          justify-content:space-evenly;
+          background: @white;
+          top:80px;
+          z-index: 2;
+          margin: 0;
+          .box-shadow();
+
+          a {
+            color: @dk_grey;
+            margin: 1rem 0;
+            text-decoration: underline;
+            text-decoration-color: @red;
+          }
+          span {
+            display: none;
+          }
+        }
+        display: none;
+      }
     }
   }
 
@@ -159,6 +213,9 @@ body {
 
     &__image-wrap {
       width: 50%;
+      @media only screen and (max-width: 765px) {
+        width: 90%;
+      }
     }
 
     &__hero {
@@ -174,6 +231,10 @@ body {
       margin: 0 auto;
       width:50%;
 
+      @media only screen and (max-width: 765px) {
+        width: 90%;
+      }
+
       &--copy {
         color: @white;
         padding: 1rem;
@@ -183,15 +244,28 @@ body {
   }
 
   .products {
-    margin-top:10%;
+    margin: 5% 0;
+
     &__card-row {
       display: flex;
       justify-content: space-evenly;
+
+      @media only screen and (max-width: 765px) {
+        flex-direction: column;
+        justify-content: center;
+      }
     }
 
     &__card {
-      max-width:350px;
+      width:350px;
+      max-width: 30%;
+      align-self: center;
       .image-hover-effect();
+
+      @media only screen and (max-width: 765px) {
+        max-width: 90%;
+        width: 75%;
+      }
 
     }
 
@@ -213,10 +287,14 @@ body {
     padding:1rem 0;
     display: flex;
     justify-content: space-between;
+    width:100%;
     position: fixed;
     bottom: 0;
-    width:100%;
 
+    @media only screen and (max-width: 765px) {
+      flex-direction: column;
+      text-align: center;
+    }
     &__copy {
       font-size: 14px;
       color:@white;
